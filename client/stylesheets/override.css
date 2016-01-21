@@ -1,0 +1,57 @@
+.login {
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+}
+
+.h2 {
+    font-weight: bold;
+}
+
+.fa-ul {
+    text-align: left;
+    font-size: 18px;
+}
+#main {
+    margin-top: 50px !important;
+    margin-left: 0px !important;
+    background: #F2F2F2;
+}
+
+.center {
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.box-content {
+    overflow: hidden;
+}
+
+
+.tab-content {
+    overflow: hidden !important;
+}
+
+.switch-small {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-weight: bold !important;
+	font-size: 13px !important;
+}
+
+.flashcardsOptions .btn {
+    /*width: 80%;*/
+}
+
+.tabs-top {
+    background-color: #f2f2f2;
+}
+
+
+.modal-body {
+    padding: 0px !important;
+}
+
+.myCheckbox {
+   position: inherit !important;
+   margin-left: 0px !important;
+}
