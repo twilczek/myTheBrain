@@ -2,17 +2,17 @@ Footer = React.createClass({
    render(){
        return(
            <div id="footer">
-               <p class="hidden-xs">
-                   2013 TheBrain by TheBrain Software House <span class="font-grey-4">|</span>
-                   Contact us at lgandecki AT TheBrain.Pro <span class="font-grey-4">|</span> <a
+               <p className="hidden-xs">
+                   2013 TheBrain by TheBrain Software House <span className="font-grey-4">|</span>
+                   Contact us at lgandecki AT TheBrain.Pro <span className="font-grey-4">|</span> <a
                    href="#">Policy</a>
-                   <span class="font-grey-4">|</span> <a href="#" target="_blank">TheBrain.Pro
+                   <span className="font-grey-4">|</span> <a href="#" target="_blank">TheBrain.Pro
                    Blog</a>
                </p>
-               <p class="visible-xs">
+               <p className="visible-xs">
                    TheBrain by <a href="#">TheBrain Software House</a>
                </p>
-               <a href="#" class="gototop"><i class="fa fa-arrow-up"></i></a>
+               <a href="#" className="gototop"><i class="fa fa-arrow-up"></i></a>
            </div>
        )
    }
