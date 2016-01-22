@@ -5,6 +5,7 @@ body {
 /*FIXME*/
 .navbar {
     background-color: rgb(60,171,218);
+    border: 0;
 }
 
 .flashcard {
