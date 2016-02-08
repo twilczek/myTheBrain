@@ -23,3 +23,4 @@ twbs:bootstrap
 kadira:flow-router
 kadira:react-layout
 accounts-password
+accounts-facebook
