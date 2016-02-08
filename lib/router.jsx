@@ -15,3 +15,9 @@ _.each(Routes, (route) => {
         action: route.action
     });
 });
+
+FlowRouter.notFound = {
+    action() {
+        FlowRouter.go('home');
+    }
+};

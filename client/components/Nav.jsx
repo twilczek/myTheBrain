@@ -1,4 +1,4 @@
-NavBar = React.createClass({
+Nav = React.createClass({
 
     render() {
         return (

@@ -1,5 +1,9 @@
 /* CUSTOM CSS BY RACHOMIR */
 
+#home {
+    width: 100%
+}
+
 .navbar-custom {
     color: #fff;
     background-color: rgb(60,171,218);
@@ -74,9 +78,27 @@
     margin-right: 5px;
 }
 
-.box-content {
-    text-align: center
+.body-content {
+    text-align: center;
 }
+
+.body-bottom {
+    text-align: center;
+}
+
+.body-facebook {
+    margin-right: 2px;
+}
+
+.body-view {
+    margin: 50px 10px 5px 10px;
+}
+
+.lead {
+    margin: 10px 0;
+}
+
+
 /* CUSTOM CSS BY RACHOMIR */
 
 
@@ -141,9 +163,9 @@ textarea[disabled].flashcard {
 }
 
 /*.modal-box {*/
-/*border: 3px solid rgb(60,171,218) !important;*/
-/*border-top: 0px !important;*/
-/*overflow-y: auto !important;*/
+    /*border: 3px solid rgb(60,171,218) !important;*/
+    /*border-top: 0px !important;*/
+    /*overflow-y: auto !important;*/
 /*}*/
 
 .modal-close {
@@ -250,11 +272,10 @@ html, body {
 
 #footer {
     position: fixed;
-    width: 100%;
+    max-width: 100%;
     bottom: 0;
     height: 40px; /* .push must be the same height as .footer */
     z-index: 150;
-    margin-left: -15px;
 }
 
 /*.modal {*/
@@ -378,38 +399,38 @@ h3.repeat {
 
 
 /*.quickButtonLogin {*/
-/*margin-bottom: 20px;*/
-/*padding-right: 9px;*/
-/*width: 100%;*/
-/*height: 100px !important;*/
-/*display: block;*/
-/*position: relative;*/
-/*background-color: #F2F2F2;*/
-/*color: #204473;*/
-/*border: 2px solid rgb(60,171,218);*/
+    /*margin-bottom: 20px;*/
+    /*padding-right: 9px;*/
+    /*width: 100%;*/
+    /*height: 100px !important;*/
+    /*display: block;*/
+    /*position: relative;*/
+    /*background-color: #F2F2F2;*/
+    /*color: #204473;*/
+    /*border: 2px solid rgb(60,171,218);*/
 
-/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-/*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-/*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 
 /*}*/
 /*.quickButtonLogin:hover {*/
-/*background-color: rgb(60,171,218);*/
-/*color: #F2F2F2;*/
+    /*background-color: rgb(60,171,218);*/
+    /*color: #F2F2F2;*/
 
 
-/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-/*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-/*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 
 /*.btn-primary {*/
-/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 /*.btn-primary:hover {*/
-/*background: #fff;*/
-/*color: #E74C3C;*/
-/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+    /*background: #fff;*/
+    /*color: #E74C3C;*/
+    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 
 
@@ -699,23 +720,23 @@ li.active > a {
 }
 
 /*.modal-footer-mine {*/
-/*padding: 14px 15px 15px;*/
-/*margin-bottom: 0;*/
-/*background-color: #f5f5f5;*/
-/*border-right: 3px solid rgb(60,171,218);*/
-/*border-left: 3px solid rgb(60,171,218);*/
-/*border-bottom: 3px solid rgb(60,171,218);*/
-/*border-top: 0px rgb(60,171,218) !important;*/
+    /*padding: 14px 15px 15px;*/
+    /*margin-bottom: 0;*/
+    /*background-color: #f5f5f5;*/
+    /*border-right: 3px solid rgb(60,171,218);*/
+    /*border-left: 3px solid rgb(60,171,218);*/
+    /*border-bottom: 3px solid rgb(60,171,218);*/
+    /*border-top: 0px rgb(60,171,218) !important;*/
 /*}*/
 
 /*.modal-footer-mine:before, .modal-footer-mine:after {*/
-/*display: table;*/
-/*line-height: 0;*/
-/*content: "";*/
+    /*display: table;*/
+    /*line-height: 0;*/
+    /*content: "";*/
 /*}*/
 
 /*.modal-footer-mine:after {*/
-/*clear: both;*/
+    /*clear: both;*/
 /*}*/
 
 .modal-footer {
@@ -891,7 +912,7 @@ li.active > a {
     position: absolute;
     left: -20px;
     top: -10px;
-}
+    }
 
 .tabbablePadding {
     padding: 10px;
@@ -962,28 +983,28 @@ li.khanVideo:hover {
 }
 
 
-.loginList, .loginList > li > i  {
-    line-height: 56px;
+    .loginList, .loginList > li > i  {
+        line-height: 56px;
     font-size: 20px;
-}
+    }
 
-.loginListPhone {
-    line-height: 30px;
-    font-size: 15px;
-}
+    .loginListPhone {
+        line-height: 30px;
+        font-size: 15px;
+    }
 
-.modal-content {
-    border: 3px solid rgb(60,171,218);
-}
+    .modal-content {
+        border: 3px solid rgb(60,171,218);
+    }
 
-.modal-header {
-    background: rgb(60,171,218);
-    color: white;
-}
+    .modal-header {
+        background: rgb(60,171,218);
+        color: white;
+    }
 
-.modal-body-form {
-    padding: 0px
-}
+    .modal-body-form {
+        padding: 0px
+    }
 
 .btn.btn-primary-main {
     background: #F2F2F2;

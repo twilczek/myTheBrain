@@ -3959,7 +3959,7 @@ label, input, button, select, textarea {
     }
     #navigation .main-nav > li > a {
         font-size: 12px;
-        padding: 10px 8px !important;
+        padding: 50px 8px !important;
     }
 }
 @media (max-width: 840px) {
