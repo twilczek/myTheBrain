@@ -12,7 +12,7 @@ Footer = React.createClass({
                <p className="visible-xs">
                    TheBrain by <a href="#">TheBrain Software House</a>
                </p>
-               <a href="#" className="gototop"><i class="fa fa-arrow-up"></i></a>
+               <a href="#" className="gototop"><i className="fa fa-arrow-up"></i></a>
            </div>
        )
    }

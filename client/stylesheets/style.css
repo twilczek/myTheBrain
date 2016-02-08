@@ -1,11 +1,87 @@
-body {
-    background: #f2f2f2;
+/* CUSTOM CSS BY RACHOMIR */
+
+.navbar-custom {
+    color: #fff;
+    background-color: rgb(60,171,218);
+    border: none;
+    max-height: 40px;
 }
 
-/*FIXME*/
-.navbar {
-    background-color: rgb(60,171,218);
-    border: 0;
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-custom .navbar-brand {
+    color: #eee;
+}
+
+.logo-navbar {
+    max-height: 50px;
+    margin-top: 5px;
+    padding: 0 60px 5px 150px;
+}
+
+.dropdown-menu {
+    border: solid 2px rgb(60,171,218);
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background: rgb(60,171,218) !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    max-height: 55px;
+    min-width: 60px;
+    padding: 12px 12px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#login-button {
+    max-height: 55px;
+    margin-top: 5px;
+    margin-right: 150px;
+    padding: 5px 20px;
+}
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.control-label {
+    color: black;
+    margin: 5px 10px 0 10px;
+}
+
+#user-id {
+    max-width: 90%;
+    margin: 10px;
+}
+
+.up {
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+.box-content {
+    text-align: center
+}
+/* CUSTOM CSS BY RACHOMIR */
+
+
+body {
+    background: #f2f2f2;
 }
 
 .flashcard {
@@ -24,7 +100,7 @@ body {
 }
 
 .flashcard.flashcardNoMargin {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 textarea[disabled].flashcard {
@@ -65,9 +141,9 @@ textarea[disabled].flashcard {
 }
 
 /*.modal-box {*/
-    /*border: 3px solid rgb(60,171,218) !important;*/
-    /*border-top: 0px !important;*/
-    /*overflow-y: auto !important;*/
+/*border: 3px solid rgb(60,171,218) !important;*/
+/*border-top: 0px !important;*/
+/*overflow-y: auto !important;*/
 /*}*/
 
 .modal-close {
@@ -80,7 +156,7 @@ textarea[disabled].flashcard {
 
 @media (max-width: 767px) {
     .slider {
-        margin-bottom: 0px !important margin-top : 10 px;
+        margin-bottom: 0px !important; margin-top : 10px;
     }
 }
 
@@ -302,38 +378,38 @@ h3.repeat {
 
 
 /*.quickButtonLogin {*/
-    /*margin-bottom: 20px;*/
-    /*padding-right: 9px;*/
-    /*width: 100%;*/
-    /*height: 100px !important;*/
-    /*display: block;*/
-    /*position: relative;*/
-    /*background-color: #F2F2F2;*/
-    /*color: #204473;*/
-    /*border: 2px solid rgb(60,171,218);*/
+/*margin-bottom: 20px;*/
+/*padding-right: 9px;*/
+/*width: 100%;*/
+/*height: 100px !important;*/
+/*display: block;*/
+/*position: relative;*/
+/*background-color: #F2F2F2;*/
+/*color: #204473;*/
+/*border: 2px solid rgb(60,171,218);*/
 
-    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-    /*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-    /*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 
 /*}*/
 /*.quickButtonLogin:hover {*/
-    /*background-color: rgb(60,171,218);*/
-    /*color: #F2F2F2;*/
+/*background-color: rgb(60,171,218);*/
+/*color: #F2F2F2;*/
 
 
-    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-    /*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
-    /*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*-moz-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*-webkit-transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 
 /*.btn-primary {*/
-    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 /*.btn-primary:hover {*/
-    /*background: #fff;*/
-    /*color: #E74C3C;*/
-    /*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
+/*background: #fff;*/
+/*color: #E74C3C;*/
+/*transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;*/
 /*}*/
 
 
@@ -572,7 +648,7 @@ li.active > a {
 }
 
 #navigation .main-nav > li > a {
-    padding: 11px 15px;
+    padding: 15px;
 }
 
 #navigation .user .icon-nav > li > a {
@@ -623,23 +699,23 @@ li.active > a {
 }
 
 /*.modal-footer-mine {*/
-    /*padding: 14px 15px 15px;*/
-    /*margin-bottom: 0;*/
-    /*background-color: #f5f5f5;*/
-    /*border-right: 3px solid rgb(60,171,218);*/
-    /*border-left: 3px solid rgb(60,171,218);*/
-    /*border-bottom: 3px solid rgb(60,171,218);*/
-    /*border-top: 0px rgb(60,171,218) !important;*/
+/*padding: 14px 15px 15px;*/
+/*margin-bottom: 0;*/
+/*background-color: #f5f5f5;*/
+/*border-right: 3px solid rgb(60,171,218);*/
+/*border-left: 3px solid rgb(60,171,218);*/
+/*border-bottom: 3px solid rgb(60,171,218);*/
+/*border-top: 0px rgb(60,171,218) !important;*/
 /*}*/
 
 /*.modal-footer-mine:before, .modal-footer-mine:after {*/
-    /*display: table;*/
-    /*line-height: 0;*/
-    /*content: "";*/
+/*display: table;*/
+/*line-height: 0;*/
+/*content: "";*/
 /*}*/
 
 /*.modal-footer-mine:after {*/
-    /*clear: both;*/
+/*clear: both;*/
 /*}*/
 
 .modal-footer {
@@ -815,7 +891,7 @@ li.active > a {
     position: absolute;
     left: -20px;
     top: -10px;
-    }
+}
 
 .tabbablePadding {
     padding: 10px;
@@ -886,28 +962,28 @@ li.khanVideo:hover {
 }
 
 
-    .loginList, .loginList > li > i  {
-        line-height: 56px;
+.loginList, .loginList > li > i  {
+    line-height: 56px;
     font-size: 20px;
-    }
+}
 
-    .loginListPhone {
-        line-height: 30px;
-        font-size: 15px;
-    }
+.loginListPhone {
+    line-height: 30px;
+    font-size: 15px;
+}
 
-    .modal-content {
-        border: 3px solid rgb(60,171,218);
-    }
+.modal-content {
+    border: 3px solid rgb(60,171,218);
+}
 
-    .modal-header {
-        background: rgb(60,171,218);
-        color: white;
-    }
+.modal-header {
+    background: rgb(60,171,218);
+    color: white;
+}
 
-    .modal-body-form {
-        padding: 0px
-    }
+.modal-body-form {
+    padding: 0px
+}
 
 .btn.btn-primary-main {
     background: #F2F2F2;
@@ -1030,11 +1106,10 @@ li.active>a {
 }
 
 #myBrand {
-    background: url("../img/logo@2x.png") no-repeat;
-    background-size: 44px 44px;
+    background-size: 10px 10px;
     float: left;
-    padding-right: 69px;
-    line-height: 42px;
+    padding-right: 40px;
+    line-height: 10px;
     color: rgb(60,171,218);
 }
 
