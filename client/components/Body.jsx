@@ -1,5 +1,17 @@
 Body = React.createClass({
 
+    onClickFBButton() {
+
+        console.log("W onClicku dla Facebooka");
+
+        Meteor.loginWithFacebook({}, function(err){
+            console.log("W login");
+            if (err) {
+                throw new Meteor.Error("Facebook login failed");
+            }
+        });
+
+    },
     render() {
         return (
         <div className="body-view">
@@ -52,7 +64,7 @@ Body = React.createClass({
                         <p className="lead">Are you already familiar with spaced repetition? </p>
 
 
-                        <button type="submit" className="btn-mine quickButton btn-signUpWithFacebook"><i className="fa fa-hand-o-right"></i> Join
+                        <button id='facebook-login' type="submit" className="btn-mine quickButton btn-signUpWithFacebook" onClick={this.onClickFBButton}><i className="fa fa-hand-o-right"></i> Join
                             <strong>TheBrain</strong>
                             with <i className="fa fa-facebook-square body-facebook"></i>acebook!
                         </button>
