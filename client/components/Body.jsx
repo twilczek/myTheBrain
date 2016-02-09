@@ -15,9 +15,10 @@ Body = React.createClass({
 
     renderLoginContent(){
         if (this.checkIfLoggedIn()) {
+            var _name = Meteor.user().profile.name;
             return (
                 <div>
-                    <h3>You are logged in as {Meteor.user().profile.name}</h3>
+                    <h3>You are logged in as {_name}</h3>
                     <button id="logout" className="btn" onClick={this.logOut}>Logout</button>
                 </div>
             );}
