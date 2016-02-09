@@ -1,11 +1,61 @@
 Body = React.createClass({
 
-    onClickFBButton() {
+    checkIfLoggedIn() {
+        return Meteor.userId() ? true : false;
+    },
 
-        console.log("W onClicku dla Facebooka");
+    logOut(){
+        console.log("w logout");
+        Meteor.logout(function(err){
+            if (err) {
+                throw new Meteor.Error("Logout failed");
+            }
+        })
+    },
 
+    renderLoginContent(){
+        if (this.checkIfLoggedIn()) {
+            return (
+                <div>
+                    <h3>You are logged in as {Meteor.user().profile.name}</h3>
+                    <button id="logout" className="btn" onClick={this.logOut}>Logout</button>
+                </div>
+            );}
+        else
+            {
+                return (
+                    <div>
+                        <p className="lead">Are you already familiar with spaced repetition? </p>
+
+
+                        <button id='facebook-login' type="submit"
+                                className="btn-mine quickButton btn-signUpWithFacebook" onClick={this.logInWithFB}><i
+                            className="fa fa-hand-o-right"></i> Join
+                            <strong>TheBrain</strong>
+                            with <i className="fa fa-facebook-square body-facebook"></i>acebook!
+                        </button>
+
+                        <p className="login-or">OR</p>
+
+
+                        <div className="submit">
+                            <button type="submit" className="btn-mine quickButton btn-signUpWithEmailModal">
+                                <i className="fa fa-hand-o-right"></i>
+                                Join with
+                                Email
+                            </button>
+                        </div>
+                        <h2 className="text-center">For Free. For Ever.</h2>
+
+                        <p className="lead">Not familiar? Enjoy the <strong>introductory
+                            video</strong> first. </p>
+                    </div>
+                );
+            }
+    },
+
+    logInWithFB() {
         Meteor.loginWithFacebook({}, function(err){
-            console.log("W login");
             if (err) {
                 throw new Meteor.Error("Facebook login failed");
             }
@@ -61,28 +111,7 @@ Body = React.createClass({
                     <div className="box-content padding body-content">
 
 
-                        <p className="lead">Are you already familiar with spaced repetition? </p>
-
-
-                        <button id='facebook-login' type="submit" className="btn-mine quickButton btn-signUpWithFacebook" onClick={this.onClickFBButton}><i className="fa fa-hand-o-right"></i> Join
-                            <strong>TheBrain</strong>
-                            with <i className="fa fa-facebook-square body-facebook"></i>acebook!
-                        </button>
-
-                        <p className="login-or">OR</p>
-
-
-                        <div className="submit">
-                            <button type="submit" className="btn-mine quickButton btn-signUpWithEmailModal">
-                                <i className="fa fa-hand-o-right"></i>
-                                Join with
-                                Email
-                            </button>
-                        </div>
-                        <h2 className="text-center">For Free. For Ever.</h2>
-
-                        <p className="lead">Not familiar? Enjoy the <strong>introductory
-                            video</strong> first. </p>
+                        {this.renderLoginContent()}
 
 
                     </div>
