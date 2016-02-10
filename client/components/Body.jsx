@@ -1,20 +1,38 @@
 Body = React.createClass({
 
+    getInitialState() {
+        return {
+            isLoggedIn: this.checkIfLoggedIn()
+        }
+    },
+
     checkIfLoggedIn() {
         return Meteor.userId() ? true : false;
     },
 
     logOut(){
-        console.log("w logout");
         Meteor.logout(function(err){
             if (err) {
                 throw new Meteor.Error("Logout failed");
             }
-        })
+        });
+        this.setState({isLoggedIn: false});
+    },
+
+
+    logInWithFB() {
+        Meteor.loginWithFacebook({}, function(err){
+            if (err) {
+                throw new Meteor.Error("Facebook login failed");
+            }
+        });
+        this.setState({isLoggedIn: true});
     },
 
     renderLoginContent(){
         if (this.checkIfLoggedIn()) {
+            console.log("this.checkIfLoggedIn()", this.checkIfLoggedIn());
+            console.log("Meteor.user()", Meteor.user());
             var _name = Meteor.user().profile.name;
             return (
                 <div>
@@ -55,14 +73,6 @@ Body = React.createClass({
             }
     },
 
-    logInWithFB() {
-        Meteor.loginWithFacebook({}, function(err){
-            if (err) {
-                throw new Meteor.Error("Facebook login failed");
-            }
-        });
-
-    },
     render() {
         return (
         <div className="body-view">
