@@ -1,13 +1,9 @@
 Body = React.createClass({
-
-    getInitialState() {
+    mixins: [ReactMeteorData],
+    getMeteorData() {
         return {
-            isLoggedIn: this.checkIfLoggedIn()
+            currentUser: Meteor.user()
         }
-    },
-
-    checkIfLoggedIn() {
-        return Meteor.userId() ? true : false;
     },
 
     logOut(){
@@ -16,7 +12,6 @@ Body = React.createClass({
                 throw new Meteor.Error("Logout failed");
             }
         });
-        this.setState({isLoggedIn: false});
     },
 
 
@@ -26,13 +21,10 @@ Body = React.createClass({
                 throw new Meteor.Error("Facebook login failed");
             }
         });
-        this.setState({isLoggedIn: true});
     },
 
     renderLoginContent(){
-        if (this.checkIfLoggedIn()) {
-            console.log("this.checkIfLoggedIn()", this.checkIfLoggedIn());
-            console.log("Meteor.user()", Meteor.user());
+        if (this.data.currentUser) {
             var _name = Meteor.user().profile.name;
             return (
                 <div>
