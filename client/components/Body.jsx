@@ -48,14 +48,8 @@ Body = React.createClass({
 
                         <p className="login-or">OR</p>
 
+                        <SignUpWithEmailModal/>
 
-                        <div className="submit">
-                            <button type="submit" className="btn-mine quickButton btn-signUpWithEmailModal">
-                                <i className="fa fa-hand-o-right"></i>
-                                Join with
-                                Email
-                            </button>
-                        </div>
                         <h2 className="text-center">For Free. For Ever.</h2>
 
                         <p className="lead">Not familiar? Enjoy the <strong>introductory
