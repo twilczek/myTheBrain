@@ -24,25 +24,32 @@ SignUpWithEmailModal = React.createClass({
         return password === confirmationPassword;
     },
     checkEmailAndSubmit: function(event){
-        event.preventDefault();
+        event.preventDefault()
         var userName = this.state.email;
         var atPosition = userName.indexOf('@');
-
         if (atPosition > -1) {
             userName = userName.slice(0, atPosition);
             this.submitRegistrationData(userName);
-            //location.reload();
+            $('#registerModal').modal('hide');
         }
         else {
-            alert("Incorrect email");
-            return false;
+            alert("Incorrect email address");
         }
     },
-    submitRegistrationData: function(userName){
+    submitRegistrationData: function (userName) {
         Accounts.createUser({
-            email: this.state.email,
-            password: this.state.password,
-            username: userName
+                email: this.state.email,
+                password: this.state.password,
+                username: userName,
+                profile: {
+                    name: userName
+                }
+            },
+            function (error, result) {
+                if (error) {
+                    console.log("error", error);
+                    console.log("result", result);
+                }
             }
         )
     },
@@ -58,7 +65,7 @@ SignUpWithEmailModal = React.createClass({
                     </button>
                 </div>
 
-                <div className="modal fade bs-example-modal-sm1" tabIndex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div className="modal fade bs-example-modal-sm1" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                     <div className="modal-dialog modal-sm">
 
                             <div className="modal-content">
