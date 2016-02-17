@@ -25,7 +25,7 @@ Body = React.createClass({
 
     renderLoginContent(){
         if (this.data.currentUser) {
-            var _name = Meteor.user().profile.name;
+            var _name = Meteor.user()._id;
             return (
                 <div>
                     <h3>You are logged in as {_name}</h3>
