@@ -4,7 +4,9 @@ SignUpWithEmailModal = React.createClass({
         return {
             email: "",
             password: "",
-            confirmationPassword: ""
+            confirmationPassword: "",
+            passwordHasFocus: false,
+            confirmationHasFocus: false
         }
     },
     resetState: function(){
@@ -18,10 +20,20 @@ SignUpWithEmailModal = React.createClass({
         this.setState({[input]: event.target.value})
     },
     checkPasswordLength: function(){
-        return (this.state.password.length > 6);
+        if(this.state.password.length < 6){
+            return (<span className="warning"><small>The password
+                is too short</small></span>);
+        }
+        else return null;
     },
     checkIfPasswordsMatch: function(password=this.state.password,confirmationPassword=this.state.confirmationPassword){
-        return password === confirmationPassword;
+        if (password !== confirmationPassword){
+            return (<span className="warning"><small>The passwords
+                do not match </small></span>);
+        }
+        else {
+            return null;
+        }
     },
     checkEmailAndSubmit: function(event){
         event.preventDefault()
@@ -35,6 +47,12 @@ SignUpWithEmailModal = React.createClass({
         else {
             alert("Incorrect email address");
         }
+    },
+    changePasswordFocus: function(value){
+        this.setState({passwordHasFocus: value})
+    },
+    changeConfirmationFocus: function(value){
+        this.setState({confirmationHasFocus: value})
     },
     submitRegistrationData: function (userName) {
         Accounts.createUser({
@@ -81,14 +99,13 @@ SignUpWithEmailModal = React.createClass({
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="recipient-name" className="control-label"> Password</label>
-                                            <input type="password" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'password')} value={this.state.password}/>
-                                            {(!this.checkPasswordLength())? <span className="warning"><small>The password is too short</small></span> : null}
-
+                                            <input type="password" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'password')} value={this.state.password} onFocus={this.changePasswordFocus.bind(this,true)} onBlur={this.changePasswordFocus.bind(this,false)}/>
+                                            {this.state.passwordHasFocus ? this.checkPasswordLength() : null}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="recipient-name" className="control-label"> Re-type Password</label>
-                                            <input type="password" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'confirmationPassword')} value={this.state.confirmationPassword}/>
-                                            {(!this.checkIfPasswordsMatch())? <span className="warning"><small>Passwords do not match!</small></span> : null}
+                                            <input type="password" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'confirmationPassword')} value={this.state.confirmationPassword} onFocus={this.changeConfirmationFocus.bind(this,true)} onBlur={this.changeConfirmationFocus.bind(this,false)}/>
+                                            {this.state.confirmationHasFocus ? this.checkIfPasswordsMatch() : null}
                                         </div>
                                         <div className="form-group">
                                             <div className="modal-footer">
