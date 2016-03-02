@@ -38,10 +38,12 @@ SignUpWithEmailModal = React.createClass({
     prepareUserName: function(email){
         var userName;
         var atPosition = email.indexOf('@');
-        if (atPosition > -1) {
+        if (atPosition === -1) {
+            return false;
+        } else {
             userName = email.slice(0, atPosition);
             return userName;
-        } else return false;
+        }
     },
     submitRegistrationData: function(event){
         event.preventDefault();
@@ -65,7 +67,7 @@ SignUpWithEmailModal = React.createClass({
             $('#registerModal').modal('hide');
         }
         else {
-            alert("Check whether email address is correct");
+            alert("Something went wrong :(");
         }
     },
     changePasswordFocus: function(value){
