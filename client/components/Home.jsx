@@ -2,11 +2,16 @@ Home = React.createClass({
 
     render() {
         return (
-            <div id="home">
+            <div>
+                {this.props.nav}
+                {this.props.content}
+                {this.props.footer}
+            </div>
+/*            <div>
                  <Nav/>
                  <Body/>
                  <Footer/>
-            </div>
+            </div>*/
         );
     }
 });

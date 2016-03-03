@@ -38,10 +38,12 @@ SignUpWithEmailModal = React.createClass({
     prepareUserName: function(email){
         var userName;
         var atPosition = email.indexOf('@');
-        if (atPosition > -1) {
+        if (atPosition === -1) {
+            return false;
+        } else {
             userName = email.slice(0, atPosition);
             return userName;
-        } else return false;
+        }
     },
     submitRegistrationData: function(event){
         event.preventDefault();
@@ -65,7 +67,7 @@ SignUpWithEmailModal = React.createClass({
             $('#registerModal').modal('hide');
         }
         else {
-            alert("Check whether email address is correct");
+            alert("Something went wrong :(");
         }
     },
     changePasswordFocus: function(value){
@@ -77,10 +79,6 @@ SignUpWithEmailModal = React.createClass({
     shouldButtonBeDisabled: function() {
         return !this.renderPasswordLengthWarning() && /*!!this.prepareUserName(this.state.email) &&*/ !this.renderPasswordMismatchWarning();
     },
-    //  NIE DZIALA ON CHANGE W FORMIE
-    // seeOnChange: function(event){
-    //    console.log("w onChange", event);
-    //},
 
     render() {
         return (
@@ -102,7 +100,7 @@ SignUpWithEmailModal = React.createClass({
                                     <h4 className="modal-title">Sign up!</h4>
                                 </div>
                                 <div className="modal-body">
-                                    <form id="login-form" action="action" onSubmit={this.submitRegistrationData}>
+                                    <form id="register-form" action="action" onSubmit={this.submitRegistrationData}>
                                         <div className="form-group">
                                             <label htmlFor="recipient-name" className="control-label">Email Address</label>
                                             <input type="text" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'email')} value={this.state.email} />
