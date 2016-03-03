@@ -79,10 +79,6 @@ SignUpWithEmailModal = React.createClass({
     shouldButtonBeDisabled: function() {
         return !this.renderPasswordLengthWarning() && /*!!this.prepareUserName(this.state.email) &&*/ !this.renderPasswordMismatchWarning();
     },
-    //  NIE DZIALA ON CHANGE W FORMIE
-    // seeOnChange: function(event){
-    //    console.log("w onChange", event);
-    //},
 
     render() {
         return (
@@ -104,7 +100,7 @@ SignUpWithEmailModal = React.createClass({
                                     <h4 className="modal-title">Sign up!</h4>
                                 </div>
                                 <div className="modal-body">
-                                    <form id="login-form" action="action" onSubmit={this.submitRegistrationData}>
+                                    <form id="register-form" action="action" onSubmit={this.submitRegistrationData}>
                                         <div className="form-group">
                                             <label htmlFor="recipient-name" className="control-label">Email Address</label>
                                             <input type="text" className="form-control" id="user-id" onChange={this.handleCredentialsChange.bind(this, 'email')} value={this.state.email} />
