@@ -1,4 +1,10 @@
 Nav = React.createClass({
+    mixins: [ReactMeteorData],
+    getMeteorData() {
+        return {
+            currentUser: Meteor.user()
+        }
+    },
 
     render() {
         return (
@@ -22,7 +28,7 @@ Nav = React.createClass({
                             </ul>
                         </div>
                         <div>
-                            <LogInModal />
+                            {!this.data.currentUser? (<LogInModal />) : null}
                         </div>
                     </div>
                 </nav>
