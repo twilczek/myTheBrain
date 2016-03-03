@@ -5,6 +5,7 @@ LogInModal = React.createClass({
     },
 
     loginUser: function(e){
+        e.preventDefault();
         var _email = e.target.userEmail.value;
         var _password = e.target.userPassword.value;
         Meteor.loginWithPassword({email: _email}, _password, function (error, result) {
@@ -12,6 +13,7 @@ LogInModal = React.createClass({
                 console.log("error", error);
                 console.log("result", result);
             }});
+        $('#loginModal').modal('hide');
     },
     render() {
         return (
