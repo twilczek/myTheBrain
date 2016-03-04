@@ -1,11 +1,15 @@
 Nav = React.createClass({
-    mixins: [ReactMeteorData],
+/*    mixins: [ReactMeteorData],
     getMeteorData() {
         return {
             currentUser: Meteor.user()
         }
-    },
+    */
 
+    propTypes: {
+        userId: React.PropTypes.object
+    },
+    
     render() {
         return (
             <div>
@@ -28,7 +32,7 @@ Nav = React.createClass({
                             </ul>
                         </div>
                         <div>
-                            {!this.data.currentUser? (<LogInModal />) : null}
+                            {!this.props.userId? (<LogInModal />) : null}
                         </div>
                     </div>
                 </nav>

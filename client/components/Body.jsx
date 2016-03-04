@@ -1,11 +1,15 @@
 Body = React.createClass({
-    mixins: [ReactMeteorData],
+/*    mixins: [ReactMeteorData],
     getMeteorData() {
         return {
             currentUser: Meteor.user()
         }
-    },
+    },*/
 
+    propTypes: {
+        userId: React.PropTypes.object
+    },
+    
     logOut(){
         Meteor.logout(function(err){
             if (err) {
@@ -24,8 +28,8 @@ Body = React.createClass({
     },
 
     renderLoginContent(){
-        if (this.data.currentUser) {
-            var _name = Meteor.user().profile.name;
+        if (this.props.userId) {
+            var _name = this.props.userId.profile.name;
             return (
                 <div>
                     <h3>You are logged in as {_name}</h3>

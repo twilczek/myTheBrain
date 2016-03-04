@@ -19,21 +19,15 @@ SignUpWithEmailModal = React.createClass({
     handleCredentialsChange: function(input, event){
         this.setState({[input]: event.target.value})
     },
-    renderPasswordLengthWarning: function(){
-        if(this.state.password.length < 6){
-            return (<span className="warning"><small>The password
-                is too short</small></span>);
-        }
-        else return false;
+    renderPasswordLengthWarning: function() {
+        return this.state.password.length < 6 ? (<span className="warning"><small>The password
+            is too short
+        </small></span>) : false;
     },
     renderPasswordMismatchWarning: function(){
-        if (this.state.password !== this.state.confirmationPassword){
-            return (<span className="warning"><small>The passwords
-                do not match </small></span>);
-        }
-        else {
-            return false;
-        }
+        return this.state.password !== this.state.confirmationPassword ? (<span className="warning"><small>The passwords
+            do not match
+        </small></span>) : false;
     },
     prepareUserName: function(email){
         var userName;
@@ -57,17 +51,16 @@ SignUpWithEmailModal = React.createClass({
                         name: userName
                     }
                 },
-                function (error, result) {
+                function (error) {
                     if (error) {
-                        console.log("error", error);
-                        console.log("result", result);
+                        alert(error.reason);
                     }
                 }
             );
             $('#registerModal').modal('hide');
         }
         else {
-            alert("Something went wrong :(");
+            alert("Email is invalid");
         }
     },
     changePasswordFocus: function(value){
@@ -117,7 +110,6 @@ SignUpWithEmailModal = React.createClass({
                                         </div>
                                         <div className="form-group">
                                             <div className="modal-footer">
-                                                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.resetState}>Close</button>
                                                 <button type="submit" className="login-button btn btn-primary" disabled={!this.shouldButtonBeDisabled()}>Sign up!</button>
                                             </div>
                                         </div>
