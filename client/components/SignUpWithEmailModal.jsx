@@ -20,12 +20,12 @@ SignUpWithEmailModal = React.createClass({
         this.setState({[input]: event.target.value})
     },
     renderPasswordLengthWarning: function() {
-        return this.state.password.length < 6 ? (<span className="warning"><small>The password
+        return this.state.password.length < 6 ? (<span><small>Password
             is too short
         </small></span>) : false;
     },
     renderPasswordMismatchWarning: function(){
-        return this.state.password !== this.state.confirmationPassword ? (<span className="warning"><small>The passwords
+        return this.state.password !== this.state.confirmationPassword ? (<span><small>Passwords
             do not match
         </small></span>) : false;
     },
