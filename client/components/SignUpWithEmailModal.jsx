@@ -29,24 +29,26 @@ SignUpWithEmailModal = React.createClass({
             do not match
         </small></span>) : false;
     },
-    prepareUserName: function(email){
-        var userName;
-        var atPosition = email.indexOf('@');
-        if (atPosition === -1) {
+    prepareUserName: function(){
+        var _userName;
+        var _email = this.state.email;
+        var atPosition = _email.indexOf('@');
+        var _comaPosition = _email.indexOf(',');
+        if (atPosition === -1 && _comaPosition > -1) {
             return false;
         } else {
-            userName = email.slice(0, atPosition);
-            return userName;
+            _userName = _email.slice(0, atPosition);
+            _userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+            return _userName;
         }
     },
     submitRegistrationData: function(event){
         event.preventDefault();
-        var userName= this.prepareUserName(this.state.email);
+        var userName= this.prepareUserName();
         if (userName) {
             Accounts.createUser({
                     email: this.state.email,
                     password: this.state.password,
-                    username: userName,
                     profile: {
                         name: userName
                     }
