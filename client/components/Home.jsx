@@ -7,12 +7,10 @@ Home = React.createClass({
     },
     render() {
         return (
-/*  If using Flow Router to render nav, body, and footer there is trouble with passing currentUser as props*/ 
-          
             <div>
-                 <Nav userId={this.data.currentUser} />
-                 <Body userId={this.data.currentUser} />
-                 <Footer/>
+                <Nav userId={this.data.currentUser}/>
+                <Body userId={this.data.currentUser}/>
+                <Footer/>
             </div>
         );
     }

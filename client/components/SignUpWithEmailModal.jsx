@@ -34,7 +34,7 @@ SignUpWithEmailModal = React.createClass({
         var _email = this.state.email;
         var atPosition = _email.indexOf('@');
         var _comaPosition = _email.indexOf(',');
-        if (atPosition === -1 && _comaPosition > -1) {
+        if (atPosition === -1 || _comaPosition > -1) {
             return false;
         } else {
             _userName = _email.slice(0, atPosition);
