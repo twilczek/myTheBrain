@@ -1,1 +1,2 @@
-# TheBrain (MeteorJS + ReactJS) by WILK
+# TheBrain (MeteorJS + ReactJS)
+Currently moving to Meteor 1.3
