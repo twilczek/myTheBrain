@@ -32,6 +32,7 @@
 
 .dropdown-menu {
     border: solid 2px rgb(60,171,218);
+    min-width: 150px;
 }
 
 .dropdown-toggle:active, .open .dropdown-toggle {
@@ -42,8 +43,8 @@
     display: none;
     position: absolute;
     background-color: #fff;
-    max-height: 55px;
-    min-width: 60px;
+    max-height: 165px;
+    min-width: 150px;
     padding: 12px 12px;
     z-index: 1;
 }
@@ -69,7 +70,9 @@
 }
 
 
-#user-id {
+#user-id,
+#userEmail,
+#userPassword {
     max-width: 90%;
     margin: 10px;
 }
@@ -100,7 +103,22 @@
     margin: 10px 0;
 }
 
+#user-name-profile {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 146px;
+    list-style-type: none;
+    padding: 0;
+}
 
+#navigation .user .dropdown > a:hover {
+    background: #1b67af;
+    height: 50px;
+}
+
+#login-name {
+    margin-top: 7px !important;
+}
 /* CUSTOM CSS BY RACHOMIR */
 
 

@@ -19,55 +19,50 @@ SignUpWithEmailModal = React.createClass({
     handleCredentialsChange: function(input, event){
         this.setState({[input]: event.target.value})
     },
-    renderPasswordLengthWarning: function(){
-        if(this.state.password.length < 6){
-            return (<span className="warning"><small>The password
-                is too short</small></span>);
-        }
-        else return false;
+    renderPasswordLengthWarning: function() {
+        return this.state.password.length < 6 ? (<span><small>Password
+            is too short
+        </small></span>) : false;
     },
     renderPasswordMismatchWarning: function(){
-        if (this.state.password !== this.state.confirmationPassword){
-            return (<span className="warning"><small>The passwords
-                do not match </small></span>);
-        }
-        else {
-            return false;
-        }
+        return this.state.password !== this.state.confirmationPassword ? (<span><small>Passwords
+            do not match
+        </small></span>) : false;
     },
-    prepareUserName: function(email){
-        var userName;
-        var atPosition = email.indexOf('@');
-        if (atPosition === -1) {
+    prepareUserName: function(){
+        var _userName;
+        var _email = this.state.email;
+        var atPosition = _email.indexOf('@');
+        var _comaPosition = _email.indexOf(',');
+        if (atPosition === -1 || _comaPosition > -1) {
             return false;
         } else {
-            userName = email.slice(0, atPosition);
-            return userName;
+            _userName = _email.slice(0, atPosition);
+            _userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+            return _userName;
         }
     },
     submitRegistrationData: function(event){
         event.preventDefault();
-        var userName= this.prepareUserName(this.state.email);
+        var userName= this.prepareUserName();
         if (userName) {
             Accounts.createUser({
                     email: this.state.email,
                     password: this.state.password,
-                    username: userName,
                     profile: {
                         name: userName
                     }
                 },
-                function (error, result) {
+                function (error) {
                     if (error) {
-                        console.log("error", error);
-                        console.log("result", result);
+                        alert(error.reason);
                     }
                 }
             );
             $('#registerModal').modal('hide');
         }
         else {
-            alert("Something went wrong :(");
+            alert("Email is invalid");
         }
     },
     changePasswordFocus: function(value){
@@ -117,7 +112,6 @@ SignUpWithEmailModal = React.createClass({
                                         </div>
                                         <div className="form-group">
                                             <div className="modal-footer">
-                                                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.resetState}>Close</button>
                                                 <button type="submit" className="login-button btn btn-primary" disabled={!this.shouldButtonBeDisabled()}>Sign up!</button>
                                             </div>
                                         </div>
